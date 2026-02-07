@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
-import projectImage from "../assets/thu.png"
+import musicImage from "../assets/music.jpeg"
+import quizImage from "../assets/quiz.png"
+import notepadImage from "../assets/notepad.jpeg"
+import portfolioImage from "../assets/portfolio.jpeg"
+import carshowroomImage from "../assets/carshowroom.jpeg"
+import mywatchImage from "../assets/watch.jpeg"
 import "./projects.css";
 
 const Projects = () => {
@@ -34,7 +39,7 @@ const Projects = () => {
       description:
         "A full-featured music-app with cart functionality, payment integration, and admin dashboard.",
       technologies: ["Flutter", "Node.js", "MySql"],
-      image: <img src={projectImage} alt="project1" />,
+      image: <img src={musicImage} alt="project1" />,
     },
     {
       id: 2,
@@ -42,7 +47,7 @@ const Projects = () => {
       description:
         "A productivity app that helps your to-do-list, edit,update and save on notepad.",
       technologies: ["Flutter", "Firebase"],
-      image: <img src={projectImage} alt="project2" />,
+      image: <img src={notepadImage} alt="project2" />,
     },
     {
       id: 3,
@@ -50,7 +55,7 @@ const Projects = () => {
       description:
         "A responsive portfolio website with modern animations and smooth transitions.",
       technologies: ["React", "Framer Motion", "CSS3"],
-      image: <img src={projectImage} alt="project3" />,
+      image: <img src={portfolioImage} alt="project3" />,
     },
     {
       id: 4,
@@ -58,7 +63,7 @@ const Projects = () => {
       description:
         "A quiz application that allows users to test their knowledge through interactive questions.",
       technologies: ["PHP", "CSS3", "MySql"],
-      image: <img src={projectImage} alt="project4" />,
+      image: <img src={quizImage} alt="project4" />,
     },
     {
       id: 5,
@@ -66,7 +71,7 @@ const Projects = () => {
       description:
         "A modern car showroom website showcasing vehicles, features, and pricing details.",
       technologies: ["java", "MySql"],
-      image: <img src={projectImage} alt="project5" />,
+      image: <img src={carshowroomImage} alt="project5" />,
     },
     {
       id: 6,
@@ -74,7 +79,7 @@ const Projects = () => {
       description:
         "MyWatch is a smart monitoring platform designed to track activity, insights, and performance in real time.",
       technologies: ["javascript", "CSS3", "jquery"],
-      image: <img src={projectImage} alt="project6" />,
+      image: <img src={mywatchImage} alt="project6" />,
     },
   ];
 
