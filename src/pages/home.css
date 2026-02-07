@@ -65,12 +65,11 @@
   height: 300px;
   border-radius: 50%;
   overflow: hidden;
-  flex-shrink: 0;
   margin-left: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+  }
 
 .image-placeholder {
   width: 100%;
@@ -81,7 +80,9 @@
   justify-content: center;
   color: #6366f1;
   font-weight: bold;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: none;
+  outline: none;
+  /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); */
 }
 
 .hero-buttons {
