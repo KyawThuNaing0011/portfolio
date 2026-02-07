@@ -1,13 +1,36 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import viteLogo from "/vite.svg";
 import "./navbar.css";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setActive(!active);
+  };
+
+  const handleClick = (hash) => {
+    setActive(false);
+    // Navigate to the same page with the hash
+    navigate('/');
+
+    setTimeout(() => {
+      if (hash === '#home') {
+        // Scroll to top for home section
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      } else {
+        const element = document.getElementById(hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, 100);
   };
 
   useEffect(() => {
@@ -28,36 +51,33 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <a href="#home" className="navbar-brand">
-        <img src={viteLogo} className="logo" alt="Vite logo" />
-        <span className="brand-name">My Portfolio</span>
-      </a>
+      <h1 className="brand-name">My Portfolio</h1>
 
       <ul className={`nav-menu ${active ? "active" : ""}`}>
         <li className="nav-item">
-          <a href="#home" className="nav-link" onClick={() => setActive(false)}>
+          <button className="nav-link" onClick={() => handleClick('#home')}>
             Home
-          </a>
+          </button>
         </li>
         <li className="nav-item">
-          <a href="#about" className="nav-link" onClick={() => setActive(false)}>
+          <button className="nav-link" onClick={() => handleClick('#about')}>
             About
-          </a>
+          </button>
         </li>
         <li className="nav-item">
-          <a href="#projects" className="nav-link" onClick={() => setActive(false)}>
+          <button className="nav-link" onClick={() => handleClick('#projects')}>
             Projects
-          </a>
+          </button>
         </li>
         <li className="nav-item">
-          <a href="#skills" className="nav-link" onClick={() => setActive(false)}>
+          <button className="nav-link" onClick={() => handleClick('#skills')}>
             Skills
-          </a>
+          </button>
         </li>
         <li className="nav-item">
-          <a href="#contact" className="nav-link" onClick={() => setActive(false)}>
+          <button className="nav-link" onClick={() => handleClick('#contact')}>
             Contact
-          </a>
+          </button>
         </li>
       </ul>
 

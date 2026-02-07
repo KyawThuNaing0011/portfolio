@@ -1,35 +1,64 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import Navbar from "./navbar/navbar.jsx";
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import './App.css';
+import Navbar from './navbar/navbar.jsx';
+import Home from './pages/home.jsx';
+import About from './pages/about.jsx';
+import Skills from './pages/skill.jsx';
+import Projects from './pages/projects.jsx';
+import Contact from './pages/contact.jsx';
 
-function App() {
+// Component to scroll to section based on hash
+function ScrollToSection() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      if (location.hash === '#home') {
+        // Scroll to top for home section
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      } else {
+        const element = document.getElementById(location.hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  }, [location]);
+
+  return null;
+}
+
+function AppContent() {
+  const location = useLocation();
+
   return (
     <>
       <Navbar />
-      <main>
-        <section id="home" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f5f5f5'}}>
-          <h1 style={{fontSize: '3rem', color: '#333'}}>Home Section</h1>
-        </section>
-
-        <section id="about" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#eaeaea'}}>
-          <h1 style={{fontSize: '3rem', color: '#333'}}>About Section</h1>
-        </section>
-
-        <section id="projects" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0'}}>
-          <h1 style={{fontSize: '3rem', color: '#333'}}>Projects Section</h1>
-        </section>
-
-        <section id="skills" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#e5e5e5'}}>
-          <h1 style={{fontSize: '3rem', color: '#333'}}>Skills Section</h1>
-        </section>
-
-        <section id="contact" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f9f9f9'}}>
-          <h1 style={{fontSize: '3rem', color: '#333'}}>Contact Section</h1>
-        </section>
-      </main>
+      <ScrollToSection />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Home />
+            <About />
+            <Skills />
+            <Projects />
+            <Contact />
+          </>
+        } />
+      </Routes>
     </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 
