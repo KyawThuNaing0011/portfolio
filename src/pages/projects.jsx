@@ -39,7 +39,9 @@ const Projects = () => {
       description:
         "A full-featured music-app with cart functionality, payment integration, and admin dashboard.",
       technologies: ["Flutter", "Node.js", "MySql"],
-      image: <img src={musicImage} alt="project1" />,
+      image: <img src={musicImage} alt="Music App" />,
+      demoLink: "https://github.com/kyawthunaing0969", // Replace with actual demo link
+      sourceCode: "https://github.com/kyawthunaing0969/music_app", // Replace with actual repo link
     },
     {
       id: 2,
@@ -47,7 +49,9 @@ const Projects = () => {
       description:
         "A productivity app that helps your to-do-list, edit,update and save on notepad.",
       technologies: ["Flutter", "Firebase"],
-      image: <img src={notepadImage} alt="project2" />,
+      image: <img src={notepadImage} alt="Notepad" />,
+      demoLink: "https://github.com/KyawThuNaing0011", // Replace with actual demo link
+      sourceCode: "https://github.com/KyawThuNaing0011/notepad", // Replace with actual repo link
     },
     {
       id: 3,
@@ -55,7 +59,9 @@ const Projects = () => {
       description:
         "A responsive portfolio website with modern animations and smooth transitions.",
       technologies: ["React", "Framer Motion", "CSS3"],
-      image: <img src={portfolioImage} alt="project3" />,
+      image: <img src={portfolioImage} alt="Portfolio Website" />,
+      demoLink: "https://github.com/KyawThuNaing0011", // Replace with actual demo link
+      sourceCode: "https://github.com/KyawThuNaing0011/portfolio", // Replace with actual repo link
     },
     {
       id: 4,
@@ -63,15 +69,19 @@ const Projects = () => {
       description:
         "A quiz application that allows users to test their knowledge through interactive questions.",
       technologies: ["PHP", "CSS3", "MySql"],
-      image: <img src={quizImage} alt="project4" />,
+      image: <img src={quizImage} alt="Quiz App" />,
+      demoLink: "https://github.com/kyawthunaing0969", // Replace with actual demo link
+      sourceCode: "https://github.com/kyawthunaing0969/php_project", // Replace with actual repo link
     },
     {
       id: 5,
-      title: "CarShowRoom",
+      title: "CRUD",
       description:
-        "A modern car showroom website showcasing vehicles, features, and pricing details.",
-      technologies: ["java", "MySql"],
-      image: <img src={carshowroomImage} alt="project5" />,
+        "this project is to demonstrate CRUD operations using firebase database",
+      technologies: ["flutter", "firebase"],
+      image: <img src={carshowroomImage} alt="crud" />,
+      demoLink: "https://github.com/KyawThuNaing0011", // Replace with actual demo link
+      sourceCode: "https://github.com/KyawThuNaing0011/CRUD_firebase", // Replace with actual repo link
     },
     {
       id: 6,
@@ -79,7 +89,9 @@ const Projects = () => {
       description:
         "MyWatch is a smart monitoring platform designed to track activity, insights, and performance in real time.",
       technologies: ["javascript", "CSS3", "jquery"],
-      image: <img src={mywatchImage} alt="project6" />,
+      image: <img src={mywatchImage} alt="My Watch" />,
+      demoLink: "https://github.com/kyawthunaing0969", // Replace with actual demo link
+      sourceCode: "https://github.com/kyawthunaing0969/javascript", // Replace with actual repo link
     },
   ];
 
@@ -129,18 +141,22 @@ const Projects = () => {
                 </div>
                 <div className="project-actions">
                   <motion.a
-                    href="https://github.com/KyawThuNaing0011"
+                    href={project.demoLink}
                     className="btn primary"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     View Demo
                   </motion.a>
                   <motion.a
-                    href="https://github.com/kyawthunaing0969"
+                    href={project.sourceCode}
                     className="btn outline"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Source Code
                   </motion.a>
