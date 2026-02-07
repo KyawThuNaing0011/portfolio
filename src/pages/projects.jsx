@@ -114,7 +114,7 @@ const Projects = () => {
             >
               <div className="project-image">
                 <div className="image-placeholder">
-                  <span>{project.image}</span>
+                  {project.image}
                 </div>
               </div>
               <div className="project-content">
